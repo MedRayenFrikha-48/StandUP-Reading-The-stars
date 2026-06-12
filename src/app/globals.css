@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #020B1F;
+  color: #A9C8FF;
+  font-family: 'Georgia', 'Garamond', serif;
+  overflow-x: hidden;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #081B38;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C8A45D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D7C3A1;
+}
+
+/* Animations */
+@keyframes celestialGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(169, 200, 255, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(169, 200, 255, 0.8);
+  }
+}
+
+@keyframes fogDrift {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.glow-text {
+  animation: celestialGlow 3s ease-in-out infinite;
+}
+
+.fog {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+}
