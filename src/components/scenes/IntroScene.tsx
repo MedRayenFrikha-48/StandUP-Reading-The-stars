@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useGame } from '@/context/GameContext';
+import { useGame } from '@/context/game';
 
 const IntroScene: React.FC = () => {
   const { moveToScene } = useGame();
@@ -42,12 +42,14 @@ const IntroScene: React.FC = () => {
         className="absolute top-6 right-6 z-10 p-3 rounded-full border border-celestial-light hover:bg-celestial-ocean/50 transition-colors"
         aria-label="Toggle audio"
       >
-        {audioEnabled ? '🔊' : '🔇'}\n      </button>
+        {audioEnabled ? '🔊' : '🔇'}
+      </button>
 
       <div className="absolute inset-0 flex items-center justify-center z-20">
         <div className="text-center max-w-2xl px-6">
           <motion.p
-            key={displayedText}\n            initial={{ opacity: 0, y: 20 }}
+            key={displayedText}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             className="text-3xl md:text-4xl font-serif text-celestial-light mb-12 leading-relaxed"
@@ -65,7 +67,10 @@ const IntroScene: React.FC = () => {
           className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20"
         >
           <button
-            onClick={() => moveToScene('journal')}\n            className="px-8 py-4 bg-celestial-gold hover:bg-celestial-gold/80 text-celestial-dark font-bold rounded-full transition-colors text-lg"\n          >\n            ⚓ Begin Navigation
+            onClick={() => moveToScene('journal')}
+            className="px-8 py-4 bg-celestial-gold hover:bg-celestial-gold/80 text-celestial-dark font-bold rounded-full transition-colors text-lg"
+          >
+            ⚓ Begin Navigation
           </button>
         </motion.div>
       )}
