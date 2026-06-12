@@ -1,6 +1,6 @@
 'use client';
 
-import { useGame } from '@/context/GameContext';
+import { useGame } from '@/context/game';
 import IntroScene from '@/components/scenes/IntroScene';
 
 const scenes: { [key: string]: React.ComponentType } = {
