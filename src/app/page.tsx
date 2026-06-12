@@ -1,19 +1,29 @@
 'use client';
 
-import { useGame } from '@/context/game';
+import { GameProvider } from '@/context/game';
 import IntroScene from '@/components/scenes/IntroScene';
+import { useGame } from '@/context/game';
 
-const scenes: { [key: string]: React.ComponentType } = {
-  intro: IntroScene,
-};
-
-export default function Home() {
+const SceneRenderer: React.FC = () => {
   const { gameState } = useGame();
-  const CurrentScene = scenes[gameState.currentScene];
+
+  const scenes: { [key: string]: React.ComponentType } = {
+    intro: IntroScene,
+  };
+
+  const CurrentScene = scenes[gameState.currentScene] || IntroScene;
 
   return (
     <main className="w-full h-screen">
-      {CurrentScene ? <CurrentScene /> : <IntroScene />}
+      <CurrentScene />
     </main>
+  );
+};
+
+export default function Page() {
+  return (
+    <GameProvider>
+      <SceneRenderer />
+    </GameProvider>
   );
 }
