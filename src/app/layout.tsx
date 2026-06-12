@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { RootLayoutClient } from './layout-client';
 
 export const metadata: Metadata = {
   title: 'The Celestial Cipher',
@@ -15,9 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="bg-celestial-dark">
-        <RootLayoutClient>
-          {children}
-        </RootLayoutClient>
+        {children}
       </body>
     </html>
   );
