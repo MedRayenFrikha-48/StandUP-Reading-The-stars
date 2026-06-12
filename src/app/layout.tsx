@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import { GameProvider } from '@/context/game';
 import './globals.css';
+import { RootLayoutClient } from './layout-client';
 
 export const metadata: Metadata = {
   title: 'The Celestial Cipher',
@@ -15,9 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="bg-celestial-dark">
-        <GameProvider>
+        <RootLayoutClient>
           {children}
-        </GameProvider>
+        </RootLayoutClient>
       </body>
     </html>
   );
