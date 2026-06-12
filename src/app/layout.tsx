@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { GameProvider } from '@/context/GameContext';
+import { GameProvider } from '@/context/game';
 import './globals.css';
 
 export const metadata: Metadata = {
